@@ -5,6 +5,11 @@ const mongoose = require('mongoose')
 const app = express()
 
 
+app.use(cors())
+app.use(require('./routers/Auto.route'))
+app.use(require('./routers/user.route'))
+
+
 
 mongoose.connect(process.env.MONGO)
 .then(()=>{
