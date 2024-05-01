@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 
 const autoSchema = new mongoose.Schema({
-  brand: String,
+  image: String,
+  brand: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "Brand"
+  },
   model: String,
   year: Number,
   color: String,
