@@ -6,6 +6,7 @@ const app = express()
 
 
 app.use(cors())
+app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 app.use(require('./routers/Auto.route'))
 app.use(require('./routers/user.route'))
@@ -17,7 +18,7 @@ app.use(require('./routers/img.route'))
 mongoose.connect(process.env.MONGO)
 .then(()=>{
     console.log("Сервер включен");
-    app.listen(8000,()=>{
+    app.listen(8500,()=>{
         console.log('Подключено');
     })
 })

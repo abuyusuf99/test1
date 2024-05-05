@@ -43,7 +43,7 @@ module.exports.autoControllers = {
   },
   getAuto: async (req, res) => {
     try {
-      const data = await Auto.find();
+      const data = await Auto.find().populate("brand");
       res.json(data);
     } catch (error) {
         res.json(error)
