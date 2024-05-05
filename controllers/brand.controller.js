@@ -9,6 +9,7 @@ createBrand: async(req,res)=>{
           image: req.body.image
         })
         return res.json(data)
+        console.log(data);
     } catch (error) {
         res.json(error)
     }
