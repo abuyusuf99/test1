@@ -56,5 +56,13 @@ module.exports.autoControllers = {
     } catch (error) {
         res.json(error)
     }
+  }, 
+  getAutoByBrand: async(req, res) => {
+    try {
+      const data = await Auto.find({brand: req.params.id});
+      res.json(data)
+    } catch (error) {
+      res.json({error: error.message})
+    }
   }
 };
